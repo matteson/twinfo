@@ -1,0 +1,11 @@
+# OS stuff #
+.DS_Store
+
+# Compiled source #
+###################
+*.pyc
+/twinfo/*.pyc
+/twinfo/plotting/*.pyc
+twinfo.egg-info/*
+build/*
+dist/*
