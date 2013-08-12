@@ -48,7 +48,7 @@ class DataHandler():
 
         dbString = ' BOOL, '.join(searchTerms)
         if dbString:
-            dbString = ', ' + dbString + ' BOOL'
+            dbString = ', ' + dbString + ' BOOL' #TODO: escape sql char, or figure out how to make DB properly
         return dbString # returns empty string if no search terms
 
     def getInsertTemplate(self,searchTerms):
@@ -109,7 +109,7 @@ class TwitterLogFromQuery(Twython,DataHandler):
             # TODO1: narrow request error and reduce scope of try/except block to only handle it
             # TODO2: figure out cause of requests error
             #try:
-                search = self.search(q=self.searchString,lang='en',since_id=since_id)
+                search = self.search(q=self.searchString,lang='en',since_id=since_id,count=100)
                 since_id=search[u'search_metadata'][u'max_id_str']
 
                 for data in search[u'statuses']:

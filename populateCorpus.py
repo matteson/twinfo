@@ -8,7 +8,7 @@ auth_dict = auth.getData('my_app')
 
 currStartTime = time.time()
 timeout = 300
-stream = TwitterLogFromStream(True,'corpusTweets.db',
+stream = TwitterLogFromStream(False,'corpusTweetsGeneral.db',
                               [],float('inf'), 
                     auth_dict['APP_KEY'],
                     auth_dict['APP_SECRET'],
