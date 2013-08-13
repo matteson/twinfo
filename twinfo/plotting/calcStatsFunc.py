@@ -1,5 +1,5 @@
-from classes import PMICalc
-from classes import FreqCompilation
+from twinfo import PMICalc
+from twinfo import FreqCompilation
 from math import log
 
 def unique(a):
@@ -64,7 +64,8 @@ def calculateStats(db1,db2,dbCorpus,where1,where2,blockedWords=[]):
 
     out = []
     # need large negative value to be added, on the order of log(15/num_tweets)
-    for word in outUnion:
+    #for word in outUnion:
+    for word in outIntersect:
         if word1Dict.has_key(word):
             word1Value = word1Dict[word]
         else:
@@ -76,5 +77,4 @@ def calculateStats(db1,db2,dbCorpus,where1,where2,blockedWords=[]):
 
         out.append((word,word1Value,word2Value))
             
-
     return out

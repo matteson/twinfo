@@ -10,7 +10,7 @@ def comparisonPlot(wordTups,word1,word2,axisSize,selectedWords=[]):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.set_xlabel("PMI(w," + word1 + ")",color='r',size=20)
-    ax.set_ylabel("PMI(w,'Congress')",color='b',size=20)
+    ax.set_ylabel("PMI(w," + word2 + ")",color='b',size=20)
     ax.set_title(word1 +" vs. "+ word2 + " Word Associations",size=22)
 
     ax.scatter([tup[1] for tup in wordTups],[tup[2] for tup in wordTups],marker=None)
